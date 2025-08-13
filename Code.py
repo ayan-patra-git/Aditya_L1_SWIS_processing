@@ -7,9 +7,9 @@
 import cdflib
 from spacepy import pycdf
 
-BLK_file = r"F:\Aditya-L1\Data\AL1_ASW91_L2_BLK_20250704_UNP_9999_999999_V02.cdf"
-TH1_file = r"F:\Aditya-L1\Data\AL1_ASW91_L2_TH1_20250704_UNP_9999_999999_V02.cdf"
-TH2_file = r"F:\Aditya-L1\Data\AL1_ASW91_L2_TH2_20250704_UNP_9999_999999_V02.cdf"
+BLK_file = "/media/ubuntu/Disk/Aditya-L1/Data/AL1_ASW91_L2_BLK_20250704_UNP_9999_999999_V02.cdf"
+TH1_file = "/media/ubuntu/Disk/Aditya-L1/Data/AL1_ASW91_L2_TH1_20250704_UNP_9999_999999_V02.cdf"
+TH2_file = "/media/ubuntu/Disk/Aditya-L1/Data/AL1_ASW91_L2_TH2_20250704_UNP_9999_999999_V02.cdf"
 
 cdf_file_blk = cdflib.CDF(BLK_file)
 cdf_file_th1 = cdflib.CDF(TH1_file)
@@ -78,7 +78,7 @@ import cdflib
 import pandas as pd
 
 
-file_path = r'F:\Aditya-L1\Aditya_L1_files'
+file_path = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_files"
 # List all files in the folder
 files_in_folder = os.listdir(file_path)
 
@@ -89,7 +89,7 @@ for file in files_in_folder:
         BLK_files.append(file)
 
 
-output_folder = "F:\Aditya-L1\Aditya_L1_csvs"
+output_folder = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_csvs"
 
 zVariables =  ['epoch_for_cdf_mod', 'proton_density', 'numden_p_uncer', 'proton_bulk_speed', 
                    'bulk_p_uncer', 'proton_xvelocity', 'proton_yvelocity', 'proton_zvelocity',
@@ -144,8 +144,8 @@ import numpy as np
 import pandas as pd
 import cdflib
 
-file_path = r'F:\Aditya-L1\Aditya_L1_files'
-output_path = r'F:\Aditya-L1\Aditya_L1_csvs_modified\With_date'
+file_path = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_files"
+output_path = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_csvs_modified/With_date'
 
 if not os.path.exists(output_path):
     os.makedirs(output_path)
@@ -201,8 +201,8 @@ elocity"),
 import os
 import pandas as pd
 
-input_folder = r'F:\Aditya-L1\Aditya_L1_csvs_modified\With_date'
-output_folder = r'F:\Aditya-L1\Aditya_L1_csvs_modified\one_min_interval_data'
+input_folder = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_csvs_modified/With_date"
+output_folder = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_csvs_modified/one_min_interval_data"
 
 # List all CSV files in the input folder
 csv_files = [f for f in os.listdir(input_folder) if f.lower().endswith('.csv')]
@@ -237,7 +237,8 @@ for file_name in csv_files:
 
 
 
-
+#-----------------------------------------------------------------##########################-------------------------------------------------------------------------#
+#Webscrap the LASCO Coronagraph data from Cactus Catalog
 
 #----------------------------------------------------------#####################################--------------------------------------------------------------------#
 #Deviding LASCO Coronagraph Data based on the proton's Bulk speed.
@@ -245,8 +246,8 @@ for file_name in csv_files:
 
 
 import pandas as pd
-file_name = r"F:\Aditya-L1\Cactus_Catalog\processing\cmeff.csv"
-output_path = r"F:\Aditya-L1\Cactus_Catalog\cmeff_v700.csv"
+file_name = "/media/ubuntu/Disk/Aditya-L1/Cactus_Catalog/processing/cmeff.csv"
+output_path = "/media/ubuntu/Disk/Aditya-L1/Cactus_Catalog/cmeff_v700.csv"
 
 # Read the CSV
 df = pd.read_csv(file_name)
@@ -277,7 +278,7 @@ import pandas as pd
 from datetime import timedelta
 
 
-cactus_final = r"F:\Aditya-L1\Cactus_Catalog\cmeff_v700.csv"
+cactus_final = "/media/ubuntu/Disk/Aditya-L1/Cactus_Catalog/cmeff_v700.csv"
 # Constants
 DISTANCE_KM = 149597870  # Distance in km
 
@@ -320,7 +321,7 @@ import os
 df['date_str'] = pd.to_datetime(df['arrival_date']).dt.strftime('%Y%m%d')
 
 # Step 2: List all files in the folder
-folder_path = r'F:\Aditya-L1\Aditya_L1_csvs'  # replace with your folder path
+folder_path = "/media/ubuntu/Disk/Aditya-L1/Aditya_L1_csvs"  # replace with your folder path
 all_files = os.listdir(folder_path)
 
 # Step 3: Match dates with file names
@@ -351,7 +352,7 @@ Non_CME_list = [f for f in all_files if f not in CME_list]
     so I have to match the data based on the CME_List and Non_CME_List
     '''
 
-mean_data = r"F:\Aditya-L1\Train_data\mean_data"
+mean_data = "/media/ubuntu/Disk/Aditya-L1/Train_data/mean_data"
 
 
 
